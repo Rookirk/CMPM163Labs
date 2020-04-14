@@ -22,25 +22,22 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(renderer.domElement);
 
-			const geometry1 = new THREE.BoxGeometry();
+			const geometry = new THREE.BoxGeometry();
+
 			const material1 = new THREE.MeshBasicMaterial( {color: 0xfacade} );
-			const cube1 = new THREE.Mesh(geometry1, material1);
+			const cube1 = new THREE.Mesh(geometry, material1);
 			scene.add(cube1);
 
-			const geometry2 = new THREE.BoxGeometry();
 			const material2= new THREE.MeshBasicMaterial( {color: 0xA8FFC0} );
-			const cube2 = new THREE.Mesh(geometry2, material2);
+			const cube2 = new THREE.Mesh(geometry, material2);
 			scene.add(cube2);
-			const cube2Coords = [1.5,1.5,1.5];
-			const cube2OppCoords = [-1.5,-1.5,-1.5];
-			geometry2.translate(...cube2Coords);
+			let cube2Coords = [1.5,1.5,1.5];
+			cube2.position.set(...cube2Coords);
 
-			const geometry3 = new THREE.BoxGeometry();
 			const material3 = new THREE.MeshBasicMaterial( {color: 0xFFF959} );
-			const cube3Coords = [-.8, .75, -.9];
-			const cube3OppCoords = [.8, -.75, .9];
-			const cube3 = new THREE.Mesh(geometry3, material3);
-			geometry3.translate(...cube3Coords);
+			const cube3Dist = 2;
+			const cube3 = new THREE.Mesh(geometry, material3);
+			cube3.translateZ(cube3Dist);
 			scene.add(cube3);
 
 			camera.position.z = 5; //this moves the camera towards the viewer
@@ -50,23 +47,28 @@
 				renderer.render(scene, camera);
 
 
-				geometry1.rotateX(0.01);
-				geometry1.rotateY(0.01);
+				cube1.rotateX(0.01);
+				cube1.rotateY(0.01);
 				const influence1 = Math.cos(.005*globalTime);
     			const scale1 = linearMap(influence1, -1, 1, .5, 1);
 				cube1.scale.set( scale1, scale1, scale1 );
 
-				geometry2.translate(...cube2OppCoords);
-				geometry2.rotateX(0.02);
-				geometry2.rotateZ(0.03);
-				geometry2.translate(...cube2Coords);
-				geometry2.rotateY(0.01);
+				cube2.position.set(0,0,0);
+				cube2.rotateX(0.02);
+				cube2.rotateZ(0.03);
+				const influence2 = Math.cos(.002*globalTime);
+				const translateX2 = linearMap(influence1, -1, 1, -.9, 1);
+				const translateY2 = linearMap(influence1, -1, 1, 1, 2);
+				const translateZ2 = linearMap(influence1, -1, 1, -.9, 1.8);
+				cube2Coords = [translateX2, translateY2, translateZ2];
+				cube2.position.set(...cube2Coords);
+				cube2.rotateY(0.01);
 
-				geometry3.translate(...cube3OppCoords);
-				geometry3.rotateX(0.015);
-				geometry3.rotateZ(0.01);
-				geometry3.translate(...cube3Coords);
-				geometry3.rotateZ(0.03);
+				cube3.translateZ(-cube3Dist);
+				cube3.rotateX(0.015);
+				cube3.rotateZ(0.01);
+				cube3.translateZ(cube3Dist);
+				cube3.rotateZ(0.03);
 
 				globalTime = Date.now() - startTime;
 			}
