@@ -11,6 +11,9 @@
 	<body>
 		<script src="../three.js-master/build/three.js"></script>
 		<script>
+			const startTime = Date.now();
+			let globalTime = 0;
+
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera(75, 
 			window.innerWidth/window.innerHeight, 0.1, 1000);
@@ -19,22 +22,60 @@
 			renderer.setSize(window.innerWidth, window.innerHeight);
 			document.body.appendChild(renderer.domElement);
 
-			const geometry = new THREE.BoxGeometry();
-			const material = new THREE.MeshBasicMaterial( {color: 0xfacade} );
-			
-			const cube = new THREE.Mesh(geometry, material);
-			scene.add(cube);
+			const geometry1 = new THREE.BoxGeometry();
+			const material1 = new THREE.MeshBasicMaterial( {color: 0xfacade} );
+			const cube1 = new THREE.Mesh(geometry1, material1);
+			scene.add(cube1);
+
+			const geometry2 = new THREE.BoxGeometry();
+			const material2= new THREE.MeshBasicMaterial( {color: 0xA8FFC0} );
+			const cube2 = new THREE.Mesh(geometry2, material2);
+			scene.add(cube2);
+			const cube2Coords = [1.5,1.5,1.5];
+			const cube2OppCoords = [-1.5,-1.5,-1.5];
+			geometry2.translate(...cube2Coords);
+
+			const geometry3 = new THREE.BoxGeometry();
+			const material3 = new THREE.MeshBasicMaterial( {color: 0xFFF959} );
+			const cube3Coords = [-.8, .75, -.9];
+			const cube3OppCoords = [.8, -.75, .9];
+			const cube3 = new THREE.Mesh(geometry3, material3);
+			geometry3.translate(...cube3Coords);
+			scene.add(cube3);
+
 			camera.position.z = 5; //this moves the camera towards the viewer
 
 			function animate() {
 				requestAnimationFrame(animate);
 				renderer.render(scene, camera);
 
-				geometry.rotateX(0.01);
-				geometry.rotateY(0.01);
+
+				geometry1.rotateX(0.01);
+				geometry1.rotateY(0.01);
+				const influence1 = Math.cos(.005*globalTime);
+    			const scale1 = linearMap(influence1, -1, 1, .5, 1);
+				cube1.scale.set( scale1, scale1, scale1 );
+
+				geometry2.translate(...cube2OppCoords);
+				geometry2.rotateX(0.02);
+				geometry2.rotateZ(0.03);
+				geometry2.translate(...cube2Coords);
+				geometry2.rotateY(0.01);
+
+				geometry3.translate(...cube3OppCoords);
+				geometry3.rotateX(0.015);
+				geometry3.rotateZ(0.01);
+				geometry3.translate(...cube3Coords);
+				geometry3.rotateZ(0.03);
+
+				globalTime = Date.now() - startTime;
 			}
 
 			animate();
+
+			function linearMap(value, low1, high1, low2, high2) {
+			    return low2 + (high2 - low2) * (value - low1) / (high1 - low1);
+			}
 
 		</script>
 	</body>
