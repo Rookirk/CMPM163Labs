@@ -7,40 +7,12 @@
 			body { margin: 0; }
 			canvas { display: block; }
 		</style>
-	</head>
-	<body>
 		<script src="../three.js-master/build/three.js"></script>
-		<script 
-src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
-		<script>
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera(75, 
-			window.innerWidth/window.innerHeight, 0.1, 1000);
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize(window.innerWidth, window.innerHeight);
-			document.body.appendChild(renderer.domElement);
-			camera.position.z = 2;
-			camera.position.y = 1.5;
-
-			var light = new THREE.PointLight(0xffffff, 1, 1000);
-			light.position.set(50, 50, 50);
-			scene.add(light);
-
-			var loader = new THREE.GLTFLoader();
-			loader.load('SexyClarke_LowPoly.glb', function (gltf) {
-				scene.add(gltf.scene);
-			}, function (xhr) {
-				console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
-			}, function (error) {
-				console.error(error);
-			});
-
-			function animate() {
-				requestAnimationFrame(animate);
-				renderer.render(scene, camera);
-			}
-			animate();
-
-		</script>
+		<script src="../three.js-master/examples/js/loaders/GLTFLoader.js"></script>
+		<script src="src/myLoader.js"></script>
+		<script src="src/main.js"></script>
+	</head>
+	<body onload="main()">
+		
 	</body>
 </html>
