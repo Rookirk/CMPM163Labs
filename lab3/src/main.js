@@ -7,45 +7,10 @@ let scene;
 function main() {
 	THREE.Cache.enabled = true;
 	fileLoader = new THREE.FileLoader();
-	gltfLoader = new THREE.GLTFLoader();
+	//gltfLoader = new THREE.GLTFLoader();
 
-	/*loader.load('shaders/vertexShader.vert',
-		// onLoad callback
-		function (data) {
-			console.log(data); // output the text to the console
-			vshader = data;
-			count += 1;
-			addCoolCube([-2,0,0]); // we will write this method
-		},
-		// onProgress callback
-		function (xhr) {
-			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
-		},
-		// onError callback
-		function (err) {
-			console.error('An error happened');
-		}
-	);*/
 	loadShader( 'shaders/vertexShader.vert', 'v', shaders );
 	loadShader( 'shaders/fragmentShader.frag', 'f', shaders );
-
-	/*loader.load('shaders/fragmentShader.frag',
-		// onLoad callback
-		function (data) {
-				console.log(data); // output the text to the console
-				fshader = data;
-				count += 1;
-				addCoolCube([2,0,0]); // we will write this method
-			},
-		// onProgress callback
-		function (xhr) {
-			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
-		},
-		// onError callback
-		function (err) {
-			console.error('An error happened');
-		}
-	);*/
 
 
 	// setup the scene
