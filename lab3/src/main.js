@@ -1,7 +1,6 @@
-const shaders = {};
-const cubes = [];
+const shaders = {}, textures = {};
 
-let fileLoader, gltfLoader;
+let fileLoader, textureLoader, gltfLoader;
 let scene, camera, renderer;
 
 let cubeGeometry;
@@ -9,10 +8,18 @@ let cubeGeometry;
 function main() {
 	THREE.Cache.enabled = true;
 	fileLoader = new THREE.FileLoader();
+	textureLoader = new THREE.TextureLoader();
 	//gltfLoader = new THREE.GLTFLoader();
 
 	loadShader( 'shaders/vertexShader.vert', 'v', shaders );
-	loadShader( 'shaders/fragmentShader.frag', 'f', shaders );
+	loadShader( 'shaders/colorInterpolate.frag', 'colorInterpolate', shaders );
+	loadShader( 'shaders/myFragmentShader.frag', 'myFragShader', shaders );
+
+	loadTexture( 'maps/AlbedoMaterial.png', 'albedo', textures );
+	loadTexture( 'maps/HeightMaterial.png', 'height', textures );
+	loadTexture( 'maps/EmissiveMaterial.png', 'emissive', textures );
+	loadTexture( 'maps/NormalMaterial.png', 'normal', textures );
+	loadTexture( 'maps/bumpMap.jpg', 'bump', textures );
 
 	// setup the scene
 	scene = new THREE.Scene();
@@ -60,7 +67,7 @@ function buildScene() {
 		color: 0xFF9BF1,
 		specular: 0x00ff00,
 		shininess: 30,
-		bumpMap: new THREE.TextureLoader().load( 'maps/bumpMap.jpg'),
+		bumpMap: textures.bump
 	});
 
 	const shaderMaterial1 =  new THREE.ShaderMaterial({
@@ -68,17 +75,17 @@ function buildScene() {
 			colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
 			colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
 		},
-		fragmentShader: shaders.f,
+		fragmentShader: shaders.colorInterpolate,
 		vertexShader: shaders.v,
 		precision: "mediump"
 	});
 
 	// I generated these textures with Substance Painter
 	const phongMaterial3 = new THREE.MeshPhongMaterial( {
-		map: new THREE.TextureLoader().load( 'maps/AlbedoMaterial.png' ),
-		bumpMap: new THREE.TextureLoader().load( 'maps/HeightMaterial.png'),
-		emissiveMap: new THREE.TextureLoader().load( 'maps/EmissiveMaterial.png'),
-		normalMap: new THREE.TextureLoader().load( 'maps/NormalMaterial.png')
+		map: textures.albedo,
+		bumpMap: textures.height,
+		emissiveMap: textures.emissive,
+		normalMap: textures.normal
 	});
 
 	const shaderMaterial2 =  new THREE.ShaderMaterial({
@@ -86,7 +93,7 @@ function buildScene() {
 			colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
 			colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
 		},
-		fragmentShader: shaders.f,
+		fragmentShader: shaders.myFragShader,
 		vertexShader: shaders.v,
 		precision: "mediump"
 	});
