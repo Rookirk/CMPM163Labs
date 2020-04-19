@@ -56,7 +56,7 @@ function animate() {
 
 function buildScene() {
 	const phongMaterial1 = new THREE.MeshPhongMaterial( {
-		color: 0xFF9BF1,
+		color: 0x545454,
 		specular: 0x00ff00,
 		shininess: 30,
 	});
@@ -98,11 +98,11 @@ function buildScene() {
 		precision: "mediump"
 	});
 
-	addCube([-1,-1,0], phongMaterial1);
-	addCube([-3,-1,0], phongMaterial2);
-	addCube([1,-1,0], shaderMaterial1);
-	addCube([-1,1,0], phongMaterial3);
-	addCube([1,1,0], shaderMaterial2);
+	addCube([-4,0,0], phongMaterial1);
+	addCube([-2,0,0], phongMaterial2);
+	addCube([0,0,0], shaderMaterial1);
+	addCube([2,0,0], phongMaterial3);
+	addCube([4,0,0], shaderMaterial2);
 }
 
 function addCube( position, material ) {

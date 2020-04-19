@@ -6,3 +6,7 @@ https://drive.google.com/file/d/15XuIXxUtrTVo39Q95UpNPblpIiSAc07q/view?usp=shari
 
 Part 2 Preview:
 ![](Images/Lab%202%20Part%202%20Herman%20Wu.png)
+
+Lab 3:
+Five cubes with shaders and materials (Must have UCSC email to view):
+https://drive.google.com/file/d/1q9DGqF4z7o89oKJpD7RazM1A3lzzpYiG/view?usp=sharing
