@@ -9,4 +9,4 @@ Part 2 Preview:
 
 Lab 3:
 Five cubes with shaders and materials (Must have UCSC email to view):
-https://drive.google.com/file/d/1q9DGqF4z7o89oKJpD7RazM1A3lzzpYiG/view?usp=sharing
+https://drive.google.com/file/d/1wvrJQJkr3TuCCRzAkfvLVkjGuNTgbbGY/view?usp=sharing

@@ -72,8 +72,8 @@ function buildScene() {
 
 	const shaderMaterial1 =  new THREE.ShaderMaterial({
 		uniforms: {
-			colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
-			colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
+			colorA: {type: 'vec3', value: new THREE.Color(0xFF7749)},
+			colorB: {type: 'vec3', value: new THREE.Color(0xF4FF66)}
 		},
 		fragmentShader: shaders.colorInterpolate,
 		vertexShader: shaders.v,
@@ -89,10 +89,6 @@ function buildScene() {
 	});
 
 	const shaderMaterial2 =  new THREE.ShaderMaterial({
-		uniforms: {
-			colorB: {type: 'vec3', value: new THREE.Color(0xACB6E5)},
-			colorA: {type: 'vec3', value: new THREE.Color(0x74ebd5)}
-		},
 		fragmentShader: shaders.myFragShader,
 		vertexShader: shaders.v,
 		precision: "mediump"
