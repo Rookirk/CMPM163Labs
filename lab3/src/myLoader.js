@@ -1,3 +1,5 @@
+let mainLoaded = false;
+
 let totalModels = 0;
 let totalModelsLoaded = 0;
 
@@ -49,9 +51,11 @@ function loadShader( file, name, shadersDS ){
 }
 
 function checkIfLoaded() {
-	if( totalModels === totalModelsLoaded &&
+	if( mainLoaded &&
+		totalModels === totalModelsLoaded &&
 		totalShaders === totalShadersLoaded )
 	{
-		addCoolCube([2,0,0]);
+		buildScene();
+		animate();
 	}
 }
