@@ -61,8 +61,10 @@ function buildScene() {
 		vertexShader: shaders.v,
 		precision: "mediump"});
 
-	addCube([0,0,0], phongMaterial);
-	addCube([2,0,0], shaderMaterial);
+	addCube([-1,-1,0], phongMaterial);
+	addCube([1,-1,0], shaderMaterial);
+	addCube([-1,1,0], phongMaterial);
+	addCube([1,1,0], shaderMaterial);
 }
 
 function addCube( position, material ) {
