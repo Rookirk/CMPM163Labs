@@ -70,7 +70,7 @@ function buildScene() {
 			type: "t",
 			value: THREE.ImageUtils.loadTexture("textures/156.jpg")
 		},
-		u_uvSize: { value: 2.0 }
+		u_uvSize: { value: 2.1 }
 	};
 
 	material1 =  new THREE.ShaderMaterial({
