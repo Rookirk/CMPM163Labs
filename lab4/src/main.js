@@ -1,6 +1,7 @@
 const shaders = {}, textures = {};
 
 let scene, camera, renderer, light;
+let cubGeometry;
 
 function main() {
 	THREE.Cache.enabled = true;
@@ -42,45 +43,44 @@ function animate() {
 
 function buildScene() {
 	// setup the cube
-	const cubeGeometry = new THREE.BoxGeometry();
+	cubeGeometry = new THREE.BoxGeometry();
 
-	var material = new THREE.MeshPhongMaterial( {
+	const material_156 = new THREE.MeshPhongMaterial( { map: textures.albedo_156 });
+
+	const material_156norm = new THREE.MeshPhongMaterial( {
 		map: textures.albedo_156,
 		normalMap: textures.norm_156
 	} );
-	var cube = new THREE.Mesh(cubeGeometry, material);
-	scene.add(cube);
 
-	var material2 = new THREE.MeshPhongMaterial( { map: textures.albedo_156 });
-	var cube2 = new THREE.Mesh(cubeGeometry, material2);
-	scene.add(cube2);
-	cube2.position.x -= 2;
-
-	var material3 = new THREE.MeshPhongMaterial( {
+	const material_163norm = new THREE.MeshPhongMaterial( {
 		map: textures.albedo_163,
 		normalMap: textures.norm_163
 	});
 
-	var cube2 = new THREE.Mesh(cubeGeometry, material3);
-	scene.add(cube2);
-	cube2.position.x += 2;
-
-	var uniforms = {
+	const uniforms = {
 		texture1: {
 			type: "t",
 			value: THREE.ImageUtils.loadTexture("textures/156.jpg")
 		},
-		u_uvSize: { value: 2.1 }
+		u_uvSize: { value: 2.0 }
 	};
 
-	material1 =  new THREE.ShaderMaterial({
-	uniforms: uniforms,
+	const material_shaders =  new THREE.ShaderMaterial({
+		uniforms: uniforms,
 		fragmentShader: shaders.f,
 		vertexShader: shaders.v,
 		precision: "mediump"
 	});
 
-	mesh1 = new THREE.Mesh(cubeGeometry, material1);
-	mesh1.position.x = 4;
-	scene.add(mesh1);
+	addCube( [-4, 0, 0], material_156 );
+	addCube( [-2, 0, 0], material_156norm );
+	addCube( [0, 0, 0], material_163norm );
+	addCube( [2, 0, 0], material_shaders );
+	addCube( [4, 0, 0], material_156 );
+}
+
+function addCube( position, material ) {
+	const cubeMesh = new THREE.Mesh(cubeGeometry, material);
+	cubeMesh.position.set(...position);
+	scene.add(cubeMesh);
 }
