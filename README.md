@@ -25,7 +25,8 @@ For the first cube on the right, I made a cube with my own shaders that took in 
 
 # Lab 4:
 
-a) color = 8 * ( 1 - u )
-b) color = 8 * ( 1 - v )
-c) (5,6) black
+a) color = floor(7 * u)
+b) color = floor(7 * ( 1 - v ))
+
+c) (2,5) grey
 
