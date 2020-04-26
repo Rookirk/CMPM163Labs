@@ -22,3 +22,10 @@ For the cube in the middle, I made a cube that interpolated between orange and y
 For the second cube on the right, I generated my own textures in Substance Painter and mapped the albedo, emissive, normal, and height maps using a Phong material.
 
 For the first cube on the right, I made a cube with my own shaders that took in the global position of the fragment and mapped that value on a scale of -1 to 1 into 0 to 1, giving it a soft, pastel appearance.
+
+# Lab 4:
+
+a) color = 8 * ( 1 - u )
+b) color = 8 * ( 1 - v )
+c) (5,6) black
+

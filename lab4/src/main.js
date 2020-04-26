@@ -1,5 +1,68 @@
 
 function main() {
+	THREE.Cache.enabled = true;
+	var count = 0;
+	var loader = new THREE.FileLoader();
+	var fshader, vshader;
+
+	var geometry1, material1, mesh1;
+
+	function addTextureShaderCube() {
+		if(count == 2) {
+			var uniforms = {texture1: {
+				type: "t",
+				value: THREE.ImageUtils.loadTexture("textures/156.jpg")
+			}};
+
+      		geometry1 = new THREE.BoxGeometry(1, 1, 1);
+      		material1 =  new THREE.ShaderMaterial({
+            		uniforms: uniforms,
+      			fragmentShader: fshader,
+              		vertexShader: vshader,
+      			precision: "mediump"});
+
+      		mesh1 = new THREE.Mesh(geometry1, material1);
+      		mesh1.position.x = 2;
+      		scene.add(mesh1);
+    	}
+	}
+
+
+	loader.load('shaders/vertexShader.vert',
+	// onLoad callback
+	function (data) {
+		console.log(data); // output the text to the console
+		vshader = data;
+		count += 1;
+		addTextureShaderCube(); // we will write this method
+	},
+	// onProgress callback
+	function (xhr) {
+		console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	},
+	// onError callback
+	function (err) {
+		console.error('An error happened');
+	});
+
+	loader.load('shaders/colorInterpolate.frag',
+	// onLoad callback
+	function (data) {
+		console.log(data); // output the text to the console
+		fshader = data;
+		count += 1;
+		addTextureShaderCube(); // we will write this method
+	},
+	// onProgress callback
+	function (xhr) {
+		console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+	},
+	// onError callback
+	function (err) {
+		console.error('An error happened');
+	});
+
+
 	// setup the scene
 	var scene = new THREE.Scene();
 	var camera = new THREE.PerspectiveCamera(75, 
