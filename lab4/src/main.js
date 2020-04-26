@@ -1,15 +1,11 @@
 const shaders = {}, textures = {};
 
-let fileLoader, textureLoader;
-
 let scene, camera, renderer, light;
 
 function main() {
 	THREE.Cache.enabled = true;
-	fileLoader = new THREE.FileLoader();
-	textureLoader = new THREE.TextureLoader();
-
-	var geometry1, material1, mesh1;
+	
+	initLoaders();
 
 	loadShader( 'shaders/vertexShader.vert', 'v', shaders );
 	loadShader( 'shaders/texturedFragShader.frag', 'f', shaders );
@@ -32,8 +28,7 @@ function main() {
 	light.position.set(0, 10, 10);
 	scene.add(light);
 
-	mainLoaded = true;
-	checkIfLoaded();
+	mainIsLoaded();
 }
 
 function animate() {
@@ -47,16 +42,17 @@ function animate() {
 
 function buildScene() {
 	// setup the cube
-	var geometry = new THREE.BoxGeometry();
+	const cubeGeometry = new THREE.BoxGeometry();
+
 	var material = new THREE.MeshPhongMaterial( {
 		map: textures.albedo_156,
 		normalMap: textures.norm_156
 	} );
-	var cube = new THREE.Mesh(geometry, material);
+	var cube = new THREE.Mesh(cubeGeometry, material);
 	scene.add(cube);
 
 	var material2 = new THREE.MeshPhongMaterial( { map: textures.albedo_156 });
-	var cube2 = new THREE.Mesh(geometry, material2);
+	var cube2 = new THREE.Mesh(cubeGeometry, material2);
 	scene.add(cube2);
 	cube2.position.x -= 2;
 
@@ -65,7 +61,7 @@ function buildScene() {
 		normalMap: textures.norm_163
 	});
 
-	var cube2 = new THREE.Mesh(geometry, material3);
+	var cube2 = new THREE.Mesh(cubeGeometry, material3);
 	scene.add(cube2);
 	cube2.position.x += 2;
 
@@ -77,7 +73,6 @@ function buildScene() {
 		u_uvSize: { value: 2.0 }
 	};
 
-	geometry1 = new THREE.BoxGeometry(1, 1, 1);
 	material1 =  new THREE.ShaderMaterial({
 	uniforms: uniforms,
 		fragmentShader: shaders.f,
@@ -85,7 +80,7 @@ function buildScene() {
 		precision: "mediump"
 	});
 
-	mesh1 = new THREE.Mesh(geometry1, material1);
+	mesh1 = new THREE.Mesh(cubeGeometry, material1);
 	mesh1.position.x = 4;
 	scene.add(mesh1);
 }

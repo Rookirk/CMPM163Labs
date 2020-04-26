@@ -9,6 +9,29 @@ let totalShadersLoaded = 0;
 let totalTextures = 0;
 let totalTexturesLoaded = 0;
 
+let fileLoader, textureLoader;
+
+function initLoaders() {
+	fileLoader = new THREE.FileLoader();
+	textureLoader = new THREE.TextureLoader();
+}
+
+function checkIfLoaded() {
+	if( mainLoaded &&
+		totalModels === totalModelsLoaded &&
+		totalShaders === totalShadersLoaded &&
+		totalTextures === totalTexturesLoaded )
+	{
+		buildScene();
+		animate();
+	}
+}
+
+function mainIsLoaded() {
+	mainLoaded = true;
+	checkIfLoaded();
+}
+
 function loadModel( file, name, modelsDS, transformFunc ){
 	totalModels++;
 
@@ -77,15 +100,4 @@ function loadTexture( file, name, texturesDS ) {
 			console.error(err);
 		}
 	);
-}
-
-function checkIfLoaded() {
-	if( mainLoaded &&
-		totalModels === totalModelsLoaded &&
-		totalShaders === totalShadersLoaded &&
-		totalTextures === totalTexturesLoaded )
-	{
-		buildScene();
-		animate();
-	}
 }
