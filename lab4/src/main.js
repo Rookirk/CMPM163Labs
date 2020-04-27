@@ -33,6 +33,10 @@ function main() {
 	light.position.set(0, 10, 10);
 	scene.add(light);
 
+	light2 = new THREE.PointLight(0xffffff, .5, 100);
+	light2.position.set(0, 10, 10);
+	scene.add(light2);
+
 	mainIsLoaded();
 }
 
