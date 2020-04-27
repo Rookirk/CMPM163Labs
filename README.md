@@ -41,4 +41,4 @@ For the third cube, I mapped another combination of a color map and a normal map
 
 For the fourth cube, I mapped the color map via a shader
 
-For the fifth cube, I used the same shader, but passed in a uniform that scaled the texture.
+For the fifth cube, I used the same shader, but passed in a uniform that scaled the texture. Then I truncated the uv coordinates so only the decimal remained and fed that into the texture2D so that I repeat pixels, creating tiling.
