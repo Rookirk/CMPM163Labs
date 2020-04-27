@@ -14,6 +14,10 @@ function main() {
 	loadTexture( "textures/156_norm.jpg", 'norm_156', textures );
 	loadTexture( "textures/163.jpg", 'albedo_163', textures );
 	loadTexture( "textures/163_norm.jpg", 'norm_163', textures );
+	loadTexture( "textures/170.jpg", 'albedo_170', textures );
+	loadTexture( "textures/170_norm.jpg", 'norm_170', textures );
+	loadTexture( "textures/176.jpg", 'albedo_176', textures );
+	loadTexture( "textures/176_norm.jpg", 'norm_176', textures );
 
 	// setup the scene
 	scene = new THREE.Scene();
@@ -57,16 +61,31 @@ function buildScene() {
 		normalMap: textures.norm_163
 	});
 
-	const uniforms = {
+	const uniforms1 = {
 		texture1: {
 			type: "t",
-			value: THREE.ImageUtils.loadTexture("textures/156.jpg")
+			value: THREE.ImageUtils.loadTexture("textures/170.jpg")
+		},
+		u_uvSize: { value: 1.0 }
+	};
+
+	const material_shaders1 =  new THREE.ShaderMaterial({
+		uniforms: uniforms1,
+		fragmentShader: shaders.f,
+		vertexShader: shaders.v,
+		precision: "mediump"
+	});
+
+	const uniforms2 = {
+		texture1: {
+			type: "t",
+			value: THREE.ImageUtils.loadTexture("textures/176.jpg")
 		},
 		u_uvSize: { value: 2.0 }
 	};
 
-	const material_shaders =  new THREE.ShaderMaterial({
-		uniforms: uniforms,
+	const material_shaders2 =  new THREE.ShaderMaterial({
+		uniforms: uniforms2,
 		fragmentShader: shaders.f,
 		vertexShader: shaders.v,
 		precision: "mediump"
@@ -75,8 +94,8 @@ function buildScene() {
 	addCube( [-4, 0, 0], material_156 );
 	addCube( [-2, 0, 0], material_156norm );
 	addCube( [0, 0, 0], material_163norm );
-	addCube( [2, 0, 0], material_shaders );
-	addCube( [4, 0, 0], material_156 );
+	addCube( [2, 0, 0], material_shaders1 );
+	addCube( [4, 0, 0], material_shaders2 );
 }
 
 function addCube( position, material ) {

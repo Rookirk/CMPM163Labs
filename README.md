@@ -30,3 +30,12 @@ b) color = floor(7 * ( 1 - v ))
 
 c) (2,5) grey
 
+For the first cube on the left, I mapped just the color map of a texture on the cube.
+
+For the second cube, I mapped both the color map and normal map of the texture from cube 1 onto this cube.
+
+For the third cube, I mapped another combination of a color map and a normal map onto this cube.
+
+For the fourth cube, I mapped the color map via a shader
+
+For the fifth cube, I used the same shader, but passed in a uniform that scaled the texture.
