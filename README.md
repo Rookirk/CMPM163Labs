@@ -25,6 +25,9 @@ For the first cube on the right, I made a cube with my own shaders that took in 
 
 # Lab 4:
 
+Five cubes with textures and shaders (Must have UCSC email to view):
+https://drive.google.com/file/d/1jZkQmNrKY75JqzcMSCIehzMFpMMD14y9/view?usp=sharing
+
 a) color = floor(7 * u)
 b) color = floor(7 * ( 1 - v ))
 
