@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace KartGame.KartSystems
 {
@@ -8,6 +9,10 @@ namespace KartGame.KartSystems
         /// <summary>
         /// Contains parameters that can adjust the kart's behaviors temporarily.
         /// </summary>
+        /// 
+
+        private EnableParticles enableParticles;
+
         [System.Serializable]
         public class StatPowerup
         {
@@ -137,6 +142,8 @@ namespace KartGame.KartSystems
             m_Inputs = GetComponents<IInput>();
             suspensionNeutralPos = SuspensionBody.transform.localPosition;
             suspensionNeutralRot = SuspensionBody.transform.localRotation;
+
+            enableParticles = GetComponent<EnableParticles>();
         }
 
         void FixedUpdate()
@@ -326,6 +333,7 @@ namespace KartGame.KartSystems
             if (wasOverMaxSpeed && !isBraking) movement *= 0;
 
             Vector3 adjustedVelocity = Rigidbody.velocity + movement * Time.deltaTime;
+            enableParticles.SetVelocity(adjustedVelocity.magnitude);
 
             adjustedVelocity.y = Rigidbody.velocity.y;
 
