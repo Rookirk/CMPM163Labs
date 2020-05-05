@@ -5,7 +5,7 @@ let particleMat;
 
 let mouseX, mouseY;
 
-function main() {
+function mainA() {
 	THREE.Cache.enabled = true;
 
 	initLoaders();
