@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnableParticles : MonoBehaviour
 {
-    public ParticleSystem particles;
+    public ParticleSystem[] particles;
 
     private float kartVelocity;
 
@@ -19,16 +19,22 @@ public class EnableParticles : MonoBehaviour
     {
         if ( Mathf.Abs(kartVelocity) > .9  )
         {
-            if ( !particles.isPlaying )
+            if ( !particles[0].isPlaying )
             {
-                particles.Play();
+                for (int i = 0; i < particles.Length; i++)
+                {
+                    particles[i].Play();
+                }
             }
         }
         else
         {
-            if ( particles.isPlaying )
+            if ( particles[0].isPlaying )
             {
-                particles.Stop();
+                for (int i = 0; i < particles.Length; i++)
+                {
+                    particles[i].Stop();
+                }
             }
         }
     }
