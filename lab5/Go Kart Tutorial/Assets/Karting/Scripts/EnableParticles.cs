@@ -17,7 +17,7 @@ public class EnableParticles : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ( Mathf.Abs(kartVelocity) > .9  )
+        if ( Mathf.Abs(kartVelocity) > 5  )
         {
             if ( !particles[0].isPlaying )
             {
@@ -25,6 +25,11 @@ public class EnableParticles : MonoBehaviour
                 {
                     particles[i].Play();
                 }
+            }
+            for (int i = 0; i < particles.Length; i++)
+            {
+                var main = particles[i].main;
+                main.startSpeed = MapValue(kartVelocity, 0, 25, 0, 10);
             }
         }
         else
@@ -42,5 +47,10 @@ public class EnableParticles : MonoBehaviour
     public void SetVelocity(float velocity)
     {
         kartVelocity = velocity;
+    }
+    // http://james-ramsden.com/map-a-value-from-one-number-scale-to-another-formula-and-c-code/
+    private float MapValue(float a, float a0, float a1, float b0, float b1)
+    {
+        return b0 + (b1 - b0) * ((a - a0) / (a1 - a0));
     }
 }
