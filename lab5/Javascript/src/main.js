@@ -15,6 +15,24 @@ function main() {
 	document.body.appendChild(renderer.domElement);
 	camera.position.z = 60;
 
+	var vertices = [];
+
+	for ( var i = 0; i < 1000; i ++ ) {
+		var x = THREE.MathUtils.randFloatSpread( 500 );
+		var y = THREE.MathUtils.randFloatSpread( 500 );
+		var z = THREE.MathUtils.randFloatSpread( 100 );
+		vertices.push( x, y, z );
+	}
+
+	var geometry = new THREE.BufferGeometry();
+	geometry.setAttribute( 'position', new 
+	THREE.Float32BufferAttribute(vertices, 3));
+
+	var material = new THREE.PointsMaterial( { color: 0xef983e } );
+
+	var points = new THREE.Points(geometry, material);
+	scene.add(points);
+
 	mainIsLoaded();
 }
 
@@ -24,5 +42,5 @@ function animate() {
 }
 
 function buildScene() {
-	
+
 }
