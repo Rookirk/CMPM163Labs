@@ -1,103 +1,109 @@
-let mainLoaded = false;
+class MyLoader {
+	constructor(project){
+		this.project = project;
 
-let totalModels = 0;
-let totalModelsLoaded = 0;
+		this.mainLoaded = false;
 
-let totalShaders = 0;
-let totalShadersLoaded = 0;
+		this.totalModels = 0;
+		this.totalModelsLoaded = 0;
 
-let totalTextures = 0;
-let totalTexturesLoaded = 0;
+		this.totalShaders = 0;
+		this.totalShadersLoaded = 0;
 
-let fileLoader, textureLoader;
+		this.totalTextures = 0;
+		this.totalTexturesLoaded = 0;
 
-function initLoaders() {
-	fileLoader = new THREE.FileLoader();
-	textureLoader = new THREE.TextureLoader();
-}
-
-function checkIfLoaded() {
-	if( mainLoaded &&
-		totalModels === totalModelsLoaded &&
-		totalShaders === totalShadersLoaded &&
-		totalTextures === totalTexturesLoaded )
-	{
-		buildScene();
-		animate();
+		this.fileLoader = new THREE.FileLoader();
+		this.textureLoader = new THREE.TextureLoader();
 	}
-}
 
-function mainIsLoaded() {
-	mainLoaded = true;
-	checkIfLoaded();
-}
-
-function loadModel( file, name, modelsDS, transformFunc ){
-	totalModels++;
-
-	gltfLoader.load( file , function (gltf) {
-		transformFunc(gltf);
-		scene.add(gltf.scene);
-		modelsDS[name] = gltf.scene;
-
-		totalModelsLoaded++;
-		if( totalModels === totalModelsLoaded ){
+	checkIfLoaded() {
+		if( this.mainLoaded &&
+			this.totalModels === this.totalModelsLoaded &&
+			this.totalShaders === this.totalShadersLoaded &&
+			this.totalTextures === this.totalTexturesLoaded )
+		{
+			this.project.buildScene(this.project);
 			animate();
 		}
-	},
-	function (xhr) {
-		console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
-	},
-	function (err) {
-		console.error("model " + file + " failed to load");
-			console.error(err);
-	});
-}
+	}
 
-function loadShader( file, name, shadersDS ){
-	totalShaders++;
+	mainIsLoaded() {
+		this.mainLoaded = true;
+		this.checkIfLoaded();
+	}
 
-	fileLoader.load( file,
-		// onLoad callback
-		function (data) {
-			console.log(data); // output the text to the console
-			shadersDS[name] = data;
-			
-			totalShadersLoaded++;
-			checkIfLoaded();
+	loadModel( file, name, transformFunc ){
+		this.totalModels++;
+
+		this.gltfLoader.load( file , function (gltf) {
+			transformFunc(gltf);
+			scene.add(gltf.scene);
+			models[name] = gltf.scene;
+
+			this.totalModelsLoaded++;
+			if( this.totalModels === this.totalModelsLoaded ){
+				project.animate();
+			}
 		},
-		// onProgress callback
 		function (xhr) {
-			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
 		},
-		// onError callback
 		function (err) {
-			console.error("Shader " + file + " failed to load");
-			console.error(err);
-		}
-	);
-}
+			console.error("model " + file + " failed to load");
+				console.error(err);
+		});
+	}
 
-function loadTexture( file, name, texturesDS ) {
-	totalTextures++;
+	loadShader( file, name ){
+		this.totalShaders++;
 
-	textureLoader.load( file,
-		// onLoad callback
-		function (data) {
-			console.log(data); // output the text to the console
-			texturesDS[name] = data;
-			
-			totalTexturesLoaded++;
-			checkIfLoaded();
-		},
-		// onProgress callback
-		function (xhr) {
-			console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
-		},
-		// onError callback
-		function (err) {
-			console.error("texture " + file + " failed to load");
-			console.error(err);
-		}
-	);
+		const loader = this;
+
+		this.fileLoader.load( file,
+			// onLoad callback
+			function (data) {
+				console.log(data); // output the text to the console
+				shaders[name] = data;
+				
+				loader.totalShadersLoaded++;
+				loader.checkIfLoaded();
+			},
+			// onProgress callback
+			function (xhr) {
+				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			},
+			// onError callback
+			function (err) {
+				console.error("Shader " + file + " failed to load");
+				console.error(err);
+			}
+		);
+	}
+
+	loadTexture( file, name ) {
+		this.totalTextures++;
+
+		const loader = this;
+
+		this.textureLoader.load( file,
+			// onLoad callback
+			function (data) {
+				console.log(data); // output the text to the console
+				textures[name] = data;
+				
+				loader.totalTexturesLoaded++;
+				loader.checkIfLoaded();
+			},
+			// onProgress callback
+			function (xhr) {
+				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+			},
+			// onError callback
+			function (err) {
+				console.error("texture " + file + " failed to load");
+				console.error(err);
+			}
+		);
+	}
 }
