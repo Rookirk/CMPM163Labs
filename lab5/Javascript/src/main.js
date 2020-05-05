@@ -3,6 +3,8 @@ const shaders = {}, textures = {};
 let scene, camera, renderer, light;
 let particleMat;
 
+let mouseX, mouseY;
+
 function main() {
 	THREE.Cache.enabled = true;
 
@@ -18,6 +20,36 @@ function main() {
 	document.body.appendChild(renderer.domElement);
 	camera.position.z = 60;
 
+	var windowHalfX = window.innerWidth / 2;
+	var windowHalfY = window.innerHeight / 2;
+	mouseX = 0;
+	mouseY = 0;
+
+	function onDocumentMouseMove(event) {
+		mouseX = event.clientX - windowHalfX;
+		mouseY = event.clientY - windowHalfY;
+	}
+
+	function onDocumentTouchStart(event) {
+		if (event.touches.length == 1) {
+			event.preventDefault();
+			mouseX = event.touches[0].pageX - windowHalfX;
+			mouseY = event.touches[0].pageY - windowHalfY;
+		}
+	}
+
+	function onDocumentTouchMove(event) {
+		if (event.touches.length == 1) {
+			event.preventDefault();
+			mouseX = event.touches[0].pageX - windowHalfX;
+			mouseY = event.touches[0].pageY - windowHalfY;
+		}
+	}
+
+	document.addEventListener('mousemove', onDocumentMouseMove, false);
+	document.addEventListener('touchstart', onDocumentTouchStart, false);
+	document.addEventListener('touchmove', onDocumentTouchMove, false);
+
 	mainIsLoaded();
 }
 
@@ -25,6 +57,9 @@ function animate() {
 	var time = Date.now() * 0.00005;
 	var h = (360 * (1.0 + time) % 360) / 360;
 	particleMat.color.setHSL(h, 0.5, 0.5);
+
+	camera.position.x += (mouseX - camera.position.x) * 0.0005;
+	camera.position.y += (-mouseY - camera.position.y) * 0.0005;
 
 	requestAnimationFrame(animate);
 	renderer.render(scene, camera);
