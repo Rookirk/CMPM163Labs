@@ -51,7 +51,7 @@ function mainC() {
 						0,
 						Math.random() * waveZWidth - waveZWidth / 2
 					),
-					yOffset: Math.random() * yOffset - yOffset / 2
+					yOffset: Math.pow(Math.cos(Math.random()*Math.PI),2) * yOffset - yOffset / 2
 				}
 				particles.push(particle);
 				geo.vertices.push(particle.position)
