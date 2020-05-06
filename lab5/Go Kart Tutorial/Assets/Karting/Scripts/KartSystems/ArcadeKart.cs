@@ -172,6 +172,7 @@ namespace KartGame.KartSystems
             if (canMove)
             {
                 MoveVehicle(accel, turn);
+                enableParticles.SetTurn(turn);
             }
             GroundAirbourne();
 
