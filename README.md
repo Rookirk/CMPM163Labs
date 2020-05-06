@@ -47,13 +47,15 @@ For the fifth cube, I used the same shader, but passed in a uniform that scaled 
 # Lab 5:
 
 Unity Mod (Must have UCSC email to view):
-https://drive.google.com/file/d/1q3-BOIfnzFh9bbpSVwC4bDJGQBzd8AS4/view?usp=sharing
+https://drive.google.com/file/d/1klPlgttINfIaZlnbr6VuUd_mDQAEUZWu/view?usp=sharing
 
-I made 2 modifications:
+I made 3 modifications:
 
 I made the track longer by incorporating the extra track and adding an extra turn
 
 I also wrote a script so the particle effects would scale with your speed. If you're sitting still, then no particles will emit. As you pick up speed, the particles' initial speed will increase so it feels like you're going faster.
+
+I also made that script make other particle effects scale their speed and emission rate with how much you are turning, to give feedback that you are turning.
 
 Three.JS lab Part A: Moving the camera around static particles that change color
 https://drive.google.com/file/d/1w6nbUmKkWZrhSvigLGUQ1mXUmz5twsMV/view?usp=sharing
