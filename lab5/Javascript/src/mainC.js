@@ -1,7 +1,16 @@
 let scene, camera, renderer, light;
 
 let mesh, particleMat;
-let particleHue;
+
+const waveWidth = 100;
+const waveZWidth = 40;
+const yOffset = 15;
+
+const wavePeriod = .1;
+const waveHeight = 10;
+const waveTime = .01;
+
+const colorTime = 0.001;
 
 function mainC() {
 
@@ -18,12 +27,11 @@ function mainC() {
 		},
 
 		function(main){
-			var time = Date.now() * 0.001;
-			var h = (360 * (1.0 + time) % 360) / 360;
+			const time = Date.now();
+			var h = (360 * (1.0 + time * colorTime) % 360) / 360;
 			particleMat.color.setHSL(h, 0.5, 0.5);
 			particles.forEach(p => {
-				p.velocity.add(p.acceleration);
-				p.position.add(p.velocity);
+				p.position.y = Math.sin( wavePeriod * (time * waveTime + p.position.x))*waveHeight - waveHeight/2 + p.yOffset;
 			});
 			mesh.geometry.verticesNeedUpdate = true;
 
@@ -39,21 +47,11 @@ function mainC() {
 				const randZ = Math.random() * 2 - 1
 				const particle = {
 					position: new THREE.Vector3(
-						Math.random() * 2 - 1,
-						Math.random() * 2 - 1,
-						Math.random() * 3 - 3
+						Math.random() * waveWidth - waveWidth / 2,
+						0,
+						Math.random() * waveZWidth - waveZWidth / 2
 					),
-					//https://math.stackexchange.com/questions/44689/how-to-find-a-random-axis-or-unit-vector-in-3d
-					velocity: new THREE.Vector3(
-						Math.sqrt(1 - Math.pow(randZ,2)) * Math.cos(randAngle) * .5,
-						Math.sqrt(1 - Math.pow(randZ,2)) * Math.sin(randAngle) * .4 + .3,
-						randZ * .4 - .01
-					),
-					acceleration: new THREE.Vector3(
-						0, 
-						Math.random() * .004 - .008, 
-						0
-					),
+					yOffset: Math.random() * yOffset - yOffset / 2
 				}
 				particles.push(particle);
 				geo.vertices.push(particle.position)
