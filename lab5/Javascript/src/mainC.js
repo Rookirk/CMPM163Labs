@@ -1,8 +1,9 @@
 let scene, camera, renderer, light;
 
 let mesh, particleMat;
+let particleHue;
 
-function mainB() {
+function mainC() {
 
 	const main = new Project(
 		function(main){
@@ -17,6 +18,9 @@ function mainB() {
 		},
 
 		function(main){
+			var time = Date.now() * 0.001;
+			var h = (360 * (1.0 + time) % 360) / 360;
+			particleMat.color.setHSL(h, 0.5, 0.5);
 			particles.forEach(p => {
 				p.velocity.add(p.acceleration);
 				p.position.add(p.velocity);
@@ -28,23 +32,26 @@ function mainB() {
 		function(main){
 			particleHue = 0;
 
-			particles = []
-			const geo = new THREE.Geometry()
+			particles = [];
+			const geo = new THREE.Geometry();
 			for(let i=0; i<1000; i++) {
+				const randAngle = Math.random() * Math.PI*2;
+				const randZ = Math.random() * 2 - 1
 				const particle = {
 					position: new THREE.Vector3(
 						Math.random() * 2 - 1,
 						Math.random() * 2 - 1,
 						Math.random() * 3 - 3
 					),
+					//https://math.stackexchange.com/questions/44689/how-to-find-a-random-axis-or-unit-vector-in-3d
 					velocity: new THREE.Vector3(
-						Math.random() * .02 - .01,
-						0.06,
-						Math.random() * .02 - .01
+						Math.sqrt(1 - Math.pow(randZ,2)) * Math.cos(randAngle) * .5,
+						Math.sqrt(1 - Math.pow(randZ,2)) * Math.sin(randAngle) * .4 + .3,
+						randZ * .4 - .01
 					),
 					acceleration: new THREE.Vector3(
-						Math.random() * .002 - .001, 
-						Math.random() * .002 - .001, 
+						0, 
+						Math.random() * .004 - .008, 
 						0
 					),
 				}
