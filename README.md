@@ -43,3 +43,25 @@ For the third cube, I mapped another combination of a color map and a normal map
 For the fourth cube, I mapped the color map via a shader
 
 For the fifth cube, I used the same shader, but passed in a uniform that scaled the texture. Then I truncated the uv coordinates so only the decimal remained and fed that into the texture2D so that I repeat pixels, creating tiling.
+
+# Lab 5:
+
+Unity Mod (Must have UCSC email to view):
+https://drive.google.com/file/d/1q3-BOIfnzFh9bbpSVwC4bDJGQBzd8AS4/view?usp=sharing
+
+I made 2 modifications:
+
+I made the track longer by incorporating the extra track and adding an extra turn
+
+I also wrote a script so the particle effects would scale with your speed. If you're sitting still, then no particles will emit. As you pick up speed, the particles' initial speed will increase so it feels like you're going faster.
+
+Three.JS lab Part A: Moving the camera around static particles that change color
+https://drive.google.com/file/d/1w6nbUmKkWZrhSvigLGUQ1mXUmz5twsMV/view?usp=sharing
+
+Three.JS lab Part B: Explosion of particles (I was unsure if I was supposed to mod this)
+https://drive.google.com/file/d/1GRtfVLvl4rRM0dka8KOpOe1b83oJb28_/view?usp=sharing
+
+Three.JS lab Part C: Custom Explosion of Particles
+https://drive.google.com/file/d/1L55DHqEaw15VC1WFQrFzTGbObFkjXN3T/view?usp=sharing
+
+I looked up an algorithm to randomly pick a unit vector in 3D space, so that the particles would explode in a spherical shape. I also made the particles change their hue over time.
