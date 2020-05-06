@@ -58,10 +58,12 @@ I also wrote a script so the particle effects would scale with your speed. If yo
 Three.JS lab Part A: Moving the camera around static particles that change color
 https://drive.google.com/file/d/1w6nbUmKkWZrhSvigLGUQ1mXUmz5twsMV/view?usp=sharing
 
-Three.JS lab Part B: Explosion of particles (I was unsure if I was supposed to mod this)
-https://drive.google.com/file/d/1GRtfVLvl4rRM0dka8KOpOe1b83oJb28_/view?usp=sharing
-
-Three.JS lab Part C: Custom Explosion of Particles
+Three.JS lab Part B: Custom Explosion of Particles
 https://drive.google.com/file/d/1L55DHqEaw15VC1WFQrFzTGbObFkjXN3T/view?usp=sharing
 
 I looked up an algorithm to randomly pick a unit vector in 3D space, so that the particles would explode in a spherical shape. I also made the particles change their hue over time.
+
+Three.JS lab Part C: Sine wave
+https://drive.google.com/file/d/1CMSyK5sj7yI64pq8wEoBqDQxRsN3_k4_/view?usp=sharing
+
+I randomly spread particles across in the X axis, and then I animated their Y positions in a sinusoidal curve, given an input of their X position and time.

@@ -2,7 +2,7 @@ let scene, camera, renderer, light;
 
 let mesh, particleMat;
 
-const waveWidth = 100;
+const waveWidth = 120;
 const waveZWidth = 40;
 const yOffset = 15;
 
@@ -10,7 +10,7 @@ const wavePeriod = .1;
 const waveHeight = 10;
 const waveTime = .01;
 
-const colorTime = 0.001;
+const colorTime = 0.0002;
 
 function mainC() {
 
