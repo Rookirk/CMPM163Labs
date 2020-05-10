@@ -71,3 +71,14 @@ Three.JS lab Part C: Sine Wave
 https://drive.google.com/file/d/1CMSyK5sj7yI64pq8wEoBqDQxRsN3_k4_/view?usp=sharing
 
 I randomly spread particles across in the X axis, and then I animated their Y positions in a sinusoidal curve, given an input of their X position and time.
+
+# Lab 6:
+
+Spotlight: A light source that emits light rays from a single point in 3D space, but only in some directions.
+
+Directional Light: A light source that emits light rays in one direction globally, which can be thought of a light source from "far away"
+
+Point Light: A light source that emits light rays in all directions, starting from a single point in 3D space
+
+Area Light: A light source that emits light rays in one direction, but emits from a rectangle or disc in space. This light source also only bakes light onto light maps, so it can only cast light on static objects.
+
