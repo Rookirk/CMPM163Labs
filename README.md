@@ -82,3 +82,6 @@ Point Light: A light source that emits light rays in all directions, starting fr
 
 Area Light: A light source that emits light rays in one direction, but emits from a rectangle or disc in space. This light source also only bakes light onto light maps, so it can only cast light on static objects.
 
+I decided to mimic the material of my lanyard. So I found a texture set online that was burlap and applied all of the maps. Then I tinted the albedo map to be greenish-yellow because my lanyard is greenish-yellow. I set the smoothness to .154, because my lanyard isn't shiny, but it does reflect some light, probably because it's made of synthetic fibers? I also decided to push the height map value all of the way because that'd be cool. I also non-uniformly tiled the texture with a ratio of 1:4 because I notice the sewing on my lanyard isn't in squares, but in rectangles.
+
+https://3dtextures.me/2020/01/20/fabric-burlap-003/
