@@ -74,6 +74,8 @@ I randomly spread particles across in the X axis, and then I animated their Y po
 
 # Lab 6:
 
+Lights:
+
 Spotlight: A light source that emits light rays from a single point in 3D space, but only in some directions.
 
 Directional Light: A light source that emits light rays in one direction globally, which can be thought of a light source from "far away"
@@ -82,12 +84,24 @@ Point Light: A light source that emits light rays in all directions, starting fr
 
 Area Light: A light source that emits light rays in one direction, but emits from a rectangle or disc in space. This light source also only bakes light onto light maps, so it can only cast light on static objects.
 
+Material:
+
 I decided to mimic the material of my lanyard. So I found a texture set online that was burlap and applied all of the maps. Then I tinted the albedo map to be greenish-yellow because my lanyard is greenish-yellow. I set the smoothness to .154, because my lanyard isn't shiny, but it does reflect some light, probably because it's made of synthetic fibers? I also decided to push the height map value all of the way because that'd be cool. I also non-uniformly tiled the texture with a ratio of 1:4 because I notice the sewing on my lanyard isn't in squares, but in rectangles.
 
 https://3dtextures.me/2020/01/20/fabric-burlap-003/
+
+Textures:
 
 I then textured the floor to be wood with this texture and then tiled it 10 times.
 
 https://3dtextures.me/2019/09/19/wood-020/
 
+I also added a brick texture from here:
+
 https://3dtextures.me/2019/10/24/brick-wall-016/
+
+For both of the above textures, I used all of the available maps including AO, normal, height, basecolor, and roughness.
+
+Skybox:
+
+I downloaded a skybox texture set from the Unity Asset store "Skybox by Clod" and then created a skybox out of those 6 textures.
