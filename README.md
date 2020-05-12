@@ -105,3 +105,12 @@ For both of the above textures, I used all of the available maps including AO, n
 Skybox:
 
 I downloaded a skybox texture set from the Unity Asset store "Skybox by Clod" and then created a skybox out of those 6 textures.
+
+Shadertoy:
+
+My shader:
+https://www.shadertoy.com/view/tdffWf
+
+Cool shader (Black Hole Ray tracing):
+https://www.shadertoy.com/view/3slcWr
+
