@@ -74,6 +74,10 @@ I randomly spread particles across in the X axis, and then I animated their Y po
 
 # Lab 6:
 
+![](Images/Lab6%20Unity.png)
+
+![](Images/Lab6%20Unity%20with%20gizmos.png)
+
 Lights:
 
 Spotlight: A light source that emits light rays from a single point in 3D space, but only in some directions.
@@ -83,6 +87,10 @@ Directional Light: A light source that emits light rays in one direction globall
 Point Light: A light source that emits light rays in all directions, starting from a single point in 3D space
 
 Area Light: A light source that emits light rays in one direction, but emits from a rectangle or disc in space. This light source also only bakes light onto light maps, so it can only cast light on static objects.
+
+![](Images/Lab6%20Unity%20Lanyard.jpg)
+
+![](Images/Lab6%20Unity%20My%20Material.png)
 
 Material:
 
@@ -104,9 +112,11 @@ For both of the above textures, I used all of the available maps including AO, n
 
 Skybox:
 
-I downloaded a skybox texture set from the Unity Asset store "Skybox by Clod" and then created a skybox out of those 6 textures.
+I downloaded a sunset skybox texture set from the Unity Asset store "Skybox by Clod" and then created a skybox out of those 6 textures.
 
 Shadertoy:
+
+![](Images/Lab%206%20Tiled.png)
 
 My shader:
 https://www.shadertoy.com/view/tdffWf
