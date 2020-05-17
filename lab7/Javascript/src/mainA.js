@@ -4,6 +4,9 @@ function mainA() {
 
 	const main = new Project(
 		function(main){
+			main.loadShader("shaders/fragShader.frag", "frag");
+			main.loadShader("shaders/vertexShader.vert", "vert");
+
 			// setup the scene
 			scene = new THREE.Scene();
 			camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
