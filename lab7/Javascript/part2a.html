@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Lab 7: Mesh Manipulation</title>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+		<script src="../../three.js-master/build/three.js"></script>
+		<script src="src/myLoader.js"></script>
+		<script src="src/project.js"></script>
+		<script src="src/mainA.js"></script>
+	</head>
+	<body onload="mainA()">	
+		<script id="vertexShader" type="x-shader/x-vertex">
+			 // code for vertex shader
+			 varying vec2 vUv;
+			 void main() {
+				vUv = uv;
+				vec4 modelViewPosition = modelViewMatrix * vec4(position, 1.0);
+				gl_Position = projectionMatrix * modelViewPosition;
+			 }
+		</script>
+
+		<script id="fragmentShader" type="x-shader/x-fragment">
+			 // code for fragment shader
+			 uniform sampler2D texture1;
+			 varying vec2 vUv;
+			 void main() {
+				gl_FragColor = texture2D(texture1, vUv);
+			 }
+		</script>
+	</body>
+</html>
