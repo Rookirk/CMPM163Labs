@@ -1,5 +1,33 @@
 # CMPM163Labs
 
+# Lab 7 Part 1:
+
+Must have UCSC email to view:
+
+https://drive.google.com/file/d/1e0Tc7bRturPOc23y5Hb_0boaCfxP9nrQ/view?usp=sharing
+
+I built my scene by using the vertex displacement shader to create the mountains / islands, and then I used the wave shader to create the water. I modified the tutorial's vertex displacement shader by giving it polka dots. I originally was intending to give it a gradient dependent on height by isolating the vertex's y position. However, that didn't work out and instead made polka dots. I think it's realted to the voronoi noise generator, but I'm not sure. I also made a lion drop from the sky.
+
+I also imported various assets from the Unity store:
+
+Fantasy Skybox FREE by G.E. Team
+
+Free Trees by Darth_Artisan
+
+Rocks by VIS Games
+
+Modern Furniture Pieces Pack by Reynard Droste
+
+5 animated Voxel animals by VoxelGuy
+
+Lab partner:
+
+"So basically I altered the wave pattern of the water so that it goes out in a circle from the center, like a raindrop in a puddle, and changed the color to be less dark. I used a JPEG file texture from Animal Crossing for my Island/Mini Mountain Range and just added several .glb models from the folder Montana provided for us."
+
+I thought it was really cool how Daniel made their plane actually look like a small Animal Crossing map with rivers, and also the raindrop animation pattern is cool.
+
+I learned that the height map can be used to create rivers and not just mountains and we also did not help each other.
+
 # Lab 6 Part 1:
 
 ![](Images/Lab6%20Unity.png)
