@@ -22,6 +22,8 @@ Modern Furniture Pieces Pack by Reynard Droste
 
 Lab partner:
 
+https://drive.google.com/file/d/1rDYo8ooQ6P-bR-PQulSyCJIy5OQ_yiLM/view
+
 "So basically I altered the wave pattern of the water so that it goes out in a circle from the center, like a raindrop in a puddle, and changed the color to be less dark. I used a JPEG file texture from Animal Crossing for my Island/Mini Mountain Range and just added several .glb models from the folder Montana provided for us."
 
 I thought it was really cool how Daniel made their plane actually look like a small Animal Crossing map with rivers, and also the raindrop animation pattern is cool.
