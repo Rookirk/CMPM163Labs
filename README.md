@@ -32,7 +32,11 @@ I learned that the height map can be used to create rivers and not just mountain
 
 # Lab 7 Part 2:
 
+Mountain with the height map as the base color:
+
 ![](Images/Lab%207%20Part%202A%20Height%20Texture.png)
+
+Mountain with the terrain texture as the base color:
 
 ![](Images/Lab%207%20Part%202A%20Terrain%20Texture.png)
 
