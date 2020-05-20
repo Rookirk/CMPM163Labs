@@ -48,7 +48,7 @@ My Creative Island; Must have UCSC email to view:
 
 https://drive.google.com/file/d/1Hdgvnf8qZfsQNJo4QTL-PO2mzTEiYZZG/view?usp=sharing
 
-I used the height modified and textured mountain from the previous part and the same ocean from the previous part. But then I swapped out the fragment shader with one that tinted the mountain texture hot pink. And then I also put down some palm trees from the Unity asset "Free Trees by Darth_Artisan". I also put down the dog model in the middle of the ocean, kind of like godzilla and bobbed it up and down with a sin function with an input of time.
+I used the height modified and textured mountain from the previous part and the same ocean from the previous part. But then I swapped out the fragment shader with one that tinted the mountain texture hot pink. And then I also put down some palm trees from the Unity asset "Free Trees by Darth_Artisan". I also put down the dog model in the middle of the ocean, kind of like godzilla and bobbed it up and down with a sin function with an input of time. I also tinted the light source red.
 
 
 # Lab 6 Part 1:
