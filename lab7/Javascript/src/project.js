@@ -1,4 +1,4 @@
-const shaders = {}, textures = {};
+const shaders = {}, textures = {}, models = {};
 let projectRef;
 
 class Project {
@@ -9,8 +9,8 @@ class Project {
 		projectRef = this;
 	}
 
-	loadModel( file, name, transformFunc ){
-		this.loader.loadModel( file, name, transformFunc );
+	loadModel( file, name ){
+		this.loader.loadModel( file, name );
 	}
 
 	loadShader( file, name ){

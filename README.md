@@ -30,6 +30,10 @@ I thought it was really cool how Daniel made their plane actually look like a sm
 
 I learned that the height map can be used to create rivers and not just mountains and we also did not help each other.
 
+# Lab 7 Part 2:
+
+https://sketchfab.com/3d-models/godzilla-2019-figurine-3d-scan-d2f8c8616297405d8a8026e5dbfbbe45
+
 # Lab 6 Part 1:
 
 ![](Images/Lab6%20Unity.png)

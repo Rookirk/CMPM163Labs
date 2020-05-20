@@ -15,6 +15,7 @@ class MyLoader {
 
 		this.fileLoader = new THREE.FileLoader();
 		this.textureLoader = new THREE.TextureLoader();
+		this.gltfLoader = new THREE.GLTFLoader();
 	}
 
 	checkIfLoaded() {
@@ -33,25 +34,24 @@ class MyLoader {
 		this.checkIfLoaded();
 	}
 
-	loadModel( file, name, transformFunc ){
+	loadModel( file, name ){
 		this.totalModels++;
 
+		const loader = this;
+
 		this.gltfLoader.load( file , function (gltf) {
-			transformFunc(gltf);
 			scene.add(gltf.scene);
 			models[name] = gltf.scene;
 
-			this.totalModelsLoaded++;
-			if( this.totalModels === this.totalModelsLoaded ){
-				project.animate();
-			}
+			loader.totalModelsLoaded++;
+			loader.checkIfLoaded();
 		},
 		function (xhr) {
-			console.log((xhr.loaded / xhr.total * 100) + '% loaded' );
+			console.log( file + " " +  + (xhr.loaded / xhr.total * 100) + '% loaded' );
 		},
 		function (err) {
 			console.error("model " + file + " failed to load");
-				console.error(err);
+			console.error(err);
 		});
 	}
 
@@ -71,7 +71,7 @@ class MyLoader {
 			},
 			// onProgress callback
 			function (xhr) {
-				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+				console.log( file + " " + (xhr.loaded/xhr.total * 100)+ '% loaded');
 			},
 			// onError callback
 			function (err) {
@@ -97,7 +97,7 @@ class MyLoader {
 			},
 			// onProgress callback
 			function (xhr) {
-				console.log((xhr.loaded/xhr.total * 100)+ '% loaded');
+				console.log( file + " " + (xhr.loaded/xhr.total * 100)+ '% loaded');
 			},
 			// onError callback
 			function (err) {
