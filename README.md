@@ -32,7 +32,20 @@ I learned that the height map can be used to create rivers and not just mountain
 
 # Lab 7 Part 2:
 
-https://sketchfab.com/3d-models/godzilla-2019-figurine-3d-scan-d2f8c8616297405d8a8026e5dbfbbe45
+![](Images/Lab%207%20Part%202A%20Height%20Texture.png)
+
+![](Images/Lab%207%20Part%202A%20Terrain%20Texture.png)
+
+Wavy Plane: Must have UCSC email to view:
+
+https://drive.google.com/file/d/1hyNSUJnAotyQPBZ9vvqIgO1e00MmrOT6/view?usp=sharing
+
+My Creative Island; Must have UCSC email to view:
+
+https://drive.google.com/file/d/1Hdgvnf8qZfsQNJo4QTL-PO2mzTEiYZZG/view?usp=sharing
+
+I used the height modified and textured mountain from the previous part and the same ocean from the previous part. But then I swapped out the fragment shader with one that tinted the mountain texture hot pink. And then I also put down some palm trees from the Unity asset "Free Trees by Darth_Artisan". I also put down the dog model in the middle of the ocean, kind of like godzilla and bobbed it up and down with a sin function with an input of time.
+
 
 # Lab 6 Part 1:
 
