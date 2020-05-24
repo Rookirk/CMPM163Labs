@@ -1,5 +1,11 @@
 # CMPM163Labs
 
+# Lab 8:
+
+https://3dtextures.me/2018/12/17/ground-grass-001/
+
+https://3dtextures.me/2018/11/12/asphalt-006/
+
 # Lab 7 Part 1:
 
 Must have UCSC email to view:
