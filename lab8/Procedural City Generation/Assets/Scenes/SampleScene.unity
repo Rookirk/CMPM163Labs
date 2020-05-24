@@ -440,6 +440,12 @@ MonoBehaviour:
   - {fileID: 189348, guid: d597a8fa6b192c545bbae896e4d42a21, type: 3}
   - {fileID: 117616, guid: b2fcb4869e568194ebff11fc13530282, type: 3}
   - {fileID: 8721210235115581219, guid: 643485c51f9daf44fbe12d94ed7926d9, type: 3}
-  mapWidth: 20
-  mapHeight: 20
+  xstreets: {fileID: 5914118481933575178, guid: e7b64660ffe623e498caf13555addf90,
+    type: 3}
+  zstreets: {fileID: 7951900407850553555, guid: d9f89db1fb33a6845865e782beb19f05,
+    type: 3}
+  crossroad: {fileID: 2254842377653422860, guid: 5c1880901b98d3e4196c01bcaabe6054,
+    type: 3}
+  mapWidth: 100
+  mapHeight: 100
   buildingFootprint: 3
