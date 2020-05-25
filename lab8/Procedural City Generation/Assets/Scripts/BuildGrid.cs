@@ -24,7 +24,7 @@ public class BuildGrid : MonoBehaviour
         {
             for(int w = 0; w < mapWidth; w++)
             {
-                mapgrid[w,h] = (int)(Mathf.PerlinNoise(w / 10.0f + seed, h / 10.0f + seed) * 10);
+                mapgrid[w,h] = (int)(Mathf.PerlinNoise(w / 5.0f + seed, h / 5.0f + seed) * 10);
             }
         }
 

@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 70877c82a067af545a57856583f3577d, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -290,13 +290,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.21039252, y: -0.35329095, z: 0.100566804, w: 0.90598387}
-  m_LocalPosition: {x: 138.9, y: 23.3, z: 11.8}
+  m_LocalRotation: {x: 0.20471473, y: -0.4012246, z: 0.11167174, w: 0.8857991}
+  m_LocalPosition: {x: 130.8, y: 10.6, z: 9.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.890001, y: -42.091003, z: 2.157}
+  m_LocalEulerAnglesHint: {x: 26.890001, y: -48.221, z: 2.157}
 --- !u!114 &963194229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,9 +501,9 @@ MonoBehaviour:
   - {fileID: 3620490335776284488, guid: 9096be7b9dc3eae4da23b578766c90ae, type: 3}
   - {fileID: 1267674740755124365, guid: 4ff1dd50c1f5f4c4d9b806789129b83b, type: 3}
   - {fileID: 8087965603865065711, guid: cf0addead2f66504aa83393e9b4350b3, type: 3}
-  xstreets: {fileID: 5914118481933575178, guid: e7b64660ffe623e498caf13555addf90,
+  xstreets: {fileID: 3227832109536848830, guid: 51e11b48ef6730846a53ae4e6e22244f,
     type: 3}
-  zstreets: {fileID: 7951900407850553555, guid: d9f89db1fb33a6845865e782beb19f05,
+  zstreets: {fileID: 5252085212797447561, guid: 406dfa7d8b461b248a4742c9793841b8,
     type: 3}
   crossroad: {fileID: 6078015361180376572, guid: 647cf61246ca9ef4e97cd894241c2e39,
     type: 3}
