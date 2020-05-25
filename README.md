@@ -2,6 +2,10 @@
 
 # Lab 8:
 
+![](Images/Lab%207%20Part%202A%20Height%20Texture.png)
+
+For the tutorial step-by-step, I used the following textures in that scene:
+
 https://3dtextures.me/2018/12/17/ground-grass-001/
 
 https://3dtextures.me/2018/11/12/asphalt-006/
