@@ -291,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.21039252, y: -0.35329095, z: 0.100566804, w: 0.90598387}
-  m_LocalPosition: {x: 267.8, y: 23.3, z: 39.1}
+  m_LocalPosition: {x: 138.9, y: 23.3, z: 11.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -460,7 +460,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2121585980}
-  - component: {fileID: 2121585981}
+  - component: {fileID: 2121585982}
   m_Layer: 0
   m_Name: City Manager
   m_TagString: Untagged
@@ -482,7 +482,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2121585981
+--- !u!114 &2121585982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -491,13 +491,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2121585979}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbb271a64ec1869469354cfa2966d9d6, type: 3}
+  m_Script: {fileID: 11500000, guid: a0331b0c195554b4b8196caf6419bb04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buildings:
   - {fileID: 4774773007577018327, guid: 6ca9940f6b9477b489b348ab5533096b, type: 3}
-  - {fileID: 147108, guid: 3d01ef65dd7df27469c08a5faaf917bd, type: 3}
-  - {fileID: 151704, guid: 43cefcf568e58d84d802bbb3c6a74777, type: 3}
+  - {fileID: 5025295358301660017, guid: 14769e9c7b58fe040b61d334a81bb0b4, type: 3}
+  - {fileID: 4799619490344023920, guid: 225b206221bf8224d9a4c1da3518c226, type: 3}
   - {fileID: 189348, guid: d597a8fa6b192c545bbae896e4d42a21, type: 3}
   - {fileID: 117616, guid: b2fcb4869e568194ebff11fc13530282, type: 3}
   - {fileID: 8721210235115581219, guid: 643485c51f9daf44fbe12d94ed7926d9, type: 3}
@@ -507,6 +507,6 @@ MonoBehaviour:
     type: 3}
   crossroad: {fileID: 2254842377653422860, guid: 5c1880901b98d3e4196c01bcaabe6054,
     type: 3}
-  mapWidth: 100
-  mapHeight: 100
+  mapWidth: 50
+  mapHeight: 50
   buildingFootprint: 3

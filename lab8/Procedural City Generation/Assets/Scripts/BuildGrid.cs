@@ -45,7 +45,6 @@ public class BuildGrid : MonoBehaviour
         {
             for(int w= 0; w < mapWidth; w++)
             {
-                Debug.Log(z);
                 if (mapgrid[w, z] == -1)
                     mapgrid[w, z] = -3;
                 else
