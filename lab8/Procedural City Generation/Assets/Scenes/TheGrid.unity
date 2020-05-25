@@ -505,7 +505,7 @@ MonoBehaviour:
     type: 3}
   zstreets: {fileID: 7951900407850553555, guid: d9f89db1fb33a6845865e782beb19f05,
     type: 3}
-  crossroad: {fileID: 2254842377653422860, guid: 5c1880901b98d3e4196c01bcaabe6054,
+  crossroad: {fileID: 6078015361180376572, guid: 647cf61246ca9ef4e97cd894241c2e39,
     type: 3}
   mapWidth: 50
   mapHeight: 50
