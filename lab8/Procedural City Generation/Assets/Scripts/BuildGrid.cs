@@ -67,9 +67,9 @@ public class BuildGrid : MonoBehaviour
                     Instantiate(xstreets, pos, xstreets.transform.rotation);
                 else if(result < 0)
                     Instantiate(zstreets, pos, crossroad.transform.rotation);
-                else if(result < 2)
+                else if(result < 3)
                     Instantiate(buildings[0], pos, Quaternion.identity);
-                else if (result < 4)
+                else if (result < 5)
                     Instantiate(buildings[1], pos, Quaternion.identity);
                 else if (result < 6)
                     Instantiate(buildings[2], pos, Quaternion.identity);
