@@ -2,13 +2,19 @@
 
 # Lab 8:
 
-![](Images/Lab%207%20Part%202A%20Height%20Texture.png)
+![](Images/Lab%208%20Unity%20City.png)
 
 For the tutorial step-by-step, I used the following textures in that scene:
 
 https://3dtextures.me/2018/12/17/ground-grass-001/
 
 https://3dtextures.me/2018/11/12/asphalt-006/
+
+![](Images/Lab%208%20Unity%20Grid.png)
+
+![](Images/Lab%208%20Inspiration.png)
+
+My inspiration city is The Grid from Tron: Legacy. I decided to make my city out of buildings and streets that are just glassy black with neon-teal highlights. So I made two materials: One that is just black that is 100% smooth and 0% metal and another that is just an emissions channel tinted teal. I made the black material 0% metal because it helped give it some color that isn't just straight black. I also attached a post-processing volume to each of the buildings to give the building highlights a nice glow, like it is in the movie. I also made the buildings out of Unity primitives to give it the geometric architecture that Tron buildings have.
 
 # Lab 7 Part 1:
 
