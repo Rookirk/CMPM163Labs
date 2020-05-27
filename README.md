@@ -32,6 +32,8 @@ probably trying to rescale the textures to make them look decent on the building
 
 as the buildings are different in scale, and some texture I used stretched in ways I didn't expect
 
+We did not help each other.
+
 # Lab 7 Part 1:
 
 Must have UCSC email to view:
