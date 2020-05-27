@@ -26,7 +26,7 @@ I wanted to create an alive feeling to the city scenery, so I played with the an
 
 Also, I added some stone textures to the buildings and changed their colors based on the height they were, which helped create interesting looks because of the color lights bouncing off them
 
-"What was challening"
+"What was challenging"
 
 probably trying to rescale the textures to make them look decent on the buildings
 
