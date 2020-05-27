@@ -18,6 +18,8 @@ My inspiration city is The Grid from Tron: Legacy. I decided to make my city out
 
 # Lab 8 Partner's work:
 
+![](Images/neon_atlantis.png)
+
 I followed through with the initial instructions, then played around with different perlin noise pictures and also created a seed so I could save interesting city formations that I liked
 I wanted to create an alive feeling to the city scenery, so I played with the animated mats we learned a few weeks ago
 Also, I added some stone textures to the buildings and changed their colors based on the height they were, which helped create interesting looks because of the color lights bouncing off them
