@@ -16,6 +16,15 @@ https://3dtextures.me/2018/11/12/asphalt-006/
 
 My inspiration city is The Grid from Tron: Legacy. I decided to make my city out of buildings and streets that are just glassy black with neon-teal highlights. So I made two materials: One that is just black that is 100% smooth and 0% metal and another that is just an emissions channel tinted teal. I made the black material 0% metal because it helped give it some color that isn't just straight black. I also attached a post-processing volume to each of the buildings to give the building highlights a nice glow, like it is in the movie. I also made the buildings out of Unity primitives to give it the geometric architecture that Tron buildings have.
 
+# Lab 8 Partner's work:
+
+I followed through with the initial instructions, then played around with different perlin noise pictures and also created a seed so I could save interesting city formations that I liked
+I wanted to create an alive feeling to the city scenery, so I played with the animated mats we learned a few weeks ago
+Also, I added some stone textures to the buildings and changed their colors based on the height they were, which helped create interesting looks because of the color lights bouncing off them
+"What was challening"
+probably trying to rescale the textures to make them look decent on the buildings
+as the buildings are different in scale, and some texture I used stretched in ways I didn't expect
+
 # Lab 7 Part 1:
 
 Must have UCSC email to view:
